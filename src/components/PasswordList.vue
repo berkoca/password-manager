@@ -1,5 +1,5 @@
 <template>
-  <v-theme-provider theme="dark" class="pt-4">
+  <v-theme-provider  class="pt-4">
     <v-table fixed-header height="700px" density="compact">
       <thead style="z-index: 1">
         <tr>
@@ -7,8 +7,8 @@
           <th class="text-left">Application</th>
           <th class="text-left">Username</th>
           <th class="text-left">Password</th>
-          <th class="text-left">Edit</th>
-          <th class="text-left">Delete</th>
+          <th class="text-center" width="1%">Edit</th>
+          <th class="text-center" width="1%">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -56,14 +56,15 @@ const passwords = inject("passwords");
   align-items: center;
   cursor: pointer;
   transition: 0.17s;
+  color: white;
 }
 
 .edit-button {
-  background-color: #2196F3;
+  background-color: #1c313a;
 }
 
 .delete-button {
-  background-color: #F44336;
+  background-color: #1c313a;
 }
 
 .edit-button:hover, .delete-button:hover {

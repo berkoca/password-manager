@@ -13,7 +13,6 @@
                 <v-checkbox class="form-input" density="compact" label="Include Numbers (123456)" v-model="newPasswordForm.includeNumbers"></v-checkbox>
                 <v-checkbox class="form-input" density="compact" label="Include Lowercase Characters (abcdefgh)" v-model="newPasswordForm.includeLowercaseCharacters"></v-checkbox>
                 <v-checkbox class="form-input" density="compact" label="Include Uppercase Characters (ABCDEFGH)" v-model="newPasswordForm.includeUppercaseCharacters"></v-checkbox>
-                <v-checkbox class="form-input" density="compact" label="Exclude Ambiguous Characters (i, l, 1, L, o, 0, O)" v-model="newPasswordForm.excludeAmbiguousCharacters"></v-checkbox>
                 <v-text-field class="form-input" density="compact" label="Password Length" v-model="newPasswordForm.passwordLength"></v-text-field>
                 <v-text-field class="form-input" density="compact" label="Application Name/URL" v-model="newPasswordForm.applicationName"></v-text-field>
                 <v-text-field class="form-input" density="compact" label="Username/Email" v-model="newPasswordForm.username"></v-text-field>                
@@ -23,10 +22,10 @@
           <v-card-actions>
             <v-row>
               <v-col cols="6">
-                <v-btn color="primary" block @click="showDialog = false">Cancel</v-btn>
+                <v-btn variant="contained-text" block @click="showDialog = false">Cancel</v-btn>
               </v-col>
               <v-col cols="6">
-                <v-btn color="success" block @click="showDialog = false">Generate and Save</v-btn>
+                <v-btn variant="contained-text" color="success" block @click="showDialog = false">Generate and Save</v-btn>
               </v-col>
             </v-row>
           </v-card-actions>
@@ -47,6 +46,6 @@ const newPasswordForm = inject("newPasswordForm");
   margin-bottom: -30px;
 }
 .dialog {
-  margin-top: -60px;
+  margin-top: -50px;
 }
 </style>

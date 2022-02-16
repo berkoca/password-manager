@@ -122,7 +122,6 @@ const newPasswordForm = ref({
   includeNumbers: true,
   includeLowercaseCharacters: true,
   includeUppercaseCharacters: true,
-  excludeAmbiguousCharacters: true,
   passwordLength: 8,
   applicationName: null,
   username: null
@@ -137,7 +136,7 @@ provide("newPasswordForm", newPasswordForm);
 <style scoped>
 .parent {
   height: 100vh;
-  background: #212121;
+  background: #29434e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,7 +144,7 @@ provide("newPasswordForm", newPasswordForm);
 }
 .child {
   color: #ffffff;
-  background-color: #484848;
+  background-color: #546e7a;
   width: 800px;
   height: 800px;
   border-radius: 10px;
