@@ -1,7 +1,7 @@
 <template>
   <v-theme-provider theme="dark">
     <div class="text-center">
-      <v-dialog v-model="showDialog">
+      <v-dialog v-model="showNewPasswordDialog">
         <v-card class="dialog">
           <v-card-header>
             <v-card-header-text> Adding a New Password </v-card-header-text>
@@ -22,10 +22,10 @@
           <v-card-actions>
             <v-row>
               <v-col cols="6">
-                <v-btn variant="contained-text" block @click="showDialog = false">Cancel</v-btn>
+                <v-btn variant="contained-text" block @click="showNewPasswordDialog = false">Cancel</v-btn>
               </v-col>
               <v-col cols="6">
-                <v-btn variant="contained-text" color="success" block @click="showDialog = false">Generate and Save</v-btn>
+                <v-btn variant="contained-text" color="success" block @click="showNewPasswordDialog = false">Generate and Save</v-btn>
               </v-col>
             </v-row>
           </v-card-actions>
@@ -37,7 +37,7 @@
 
 <script setup>
 import { inject } from "vue";
-const showDialog = inject("showDialog");
+const showNewPasswordDialog = inject("showNewPasswordDialog");
 const newPasswordForm = inject("newPasswordForm");
 </script>
 

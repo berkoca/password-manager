@@ -1,11 +1,12 @@
 <template>
-  <NewPasswordDialog :show="showDialog" />
+  <NewPasswordDialog />
+  <ViewPasswordDialog />
   <div class="parent">
     <h1 style="color: white" class="pb-2">Password Manager</h1>
     <div class="child">
       <div class="pa-4">
         <div class="pb-3">
-        <v-btn @click="showDialog = true" style="width: 100%" variant="contained-text">New Password</v-btn>
+        <v-btn @click="showNewPasswordDialog = true" style="width: 100%" variant="contained-text">New Password</v-btn>
         </div>
         <PasswordList />
         <PasswordCount />
@@ -20,6 +21,7 @@ import { provide, ref } from "vue";
 
 // Components
 import NewPasswordDialog from "@/components/NewPasswordDialog"
+import ViewPasswordDialog from "@/components/ViewPasswordDialog"
 import PasswordList from "@/components/PasswordList"
 import PasswordCount from "@/components/PasswordCount"
 
@@ -116,7 +118,9 @@ const passwords = ref([
     showPassword: false,
   },
 ]);
-const showDialog = ref(false);
+const selectedPassword = ref(null);
+const showNewPasswordDialog = ref(false);
+const showViewPasswordDialog = ref(false);
 const newPasswordForm = ref({
   includeSymbols: true,
   includeNumbers: true,
@@ -128,9 +132,11 @@ const newPasswordForm = ref({
 });
 
 // Providing Variables
-provide("showDialog", showDialog);
+provide("showNewPasswordDialog", showNewPasswordDialog);
+provide("showViewPasswordDialog", showViewPasswordDialog);
 provide("passwords", passwords);
 provide("newPasswordForm", newPasswordForm);
+provide("selectedPassword", selectedPassword);
 </script>
 
 <style scoped>
@@ -145,8 +151,8 @@ provide("newPasswordForm", newPasswordForm);
 .child {
   color: #ffffff;
   background-color: #546e7a;
-  width: 800px;
-  height: 800px;
+  width: 750px;
+  height: 700px;
   border-radius: 10px;
 }
 </style>
