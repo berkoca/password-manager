@@ -32,18 +32,22 @@
 </template>
 
 <script setup>
+// Imports
 import { inject } from "vue";
+
+// Injects
 const showViewPasswordDialog = inject("showViewPasswordDialog");
 const selectedPassword = inject("selectedPassword");
+const showNotification = inject("showNotification");
 
+// Functions
 const updateClipboard = (newClip) => {
   navigator.clipboard.writeText(newClip).then(function() {
-    /* clipboard successfully set */
-    console.log(true)
-  }, function() {
-      /* clipboard write failed */
-      console.log(false)
-  });
+    showNotification.value = true;
+    setTimeout(() => {
+        showNotification.value = false;
+    }, 2000);
+  }, function() { });
 }
 </script>
 

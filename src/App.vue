@@ -1,6 +1,7 @@
 <template>
   <NewPasswordDialog />
   <ViewPasswordDialog />
+  <Notification />
   <div class="parent">
     <h1 style="color: white" class="pb-2">Password Manager</h1>
     <div class="child">
@@ -24,6 +25,7 @@ import NewPasswordDialog from "@/components/NewPasswordDialog"
 import ViewPasswordDialog from "@/components/ViewPasswordDialog"
 import PasswordList from "@/components/PasswordList"
 import PasswordCount from "@/components/PasswordCount"
+import Notification from "@/components/Notification"
 
 // Variables
 const passwords = ref([
@@ -121,6 +123,7 @@ const passwords = ref([
 const selectedPassword = ref(null);
 const showNewPasswordDialog = ref(false);
 const showViewPasswordDialog = ref(false);
+const showNotification = ref(false);
 const newPasswordForm = ref({
   includeSymbols: true,
   includeNumbers: true,
@@ -134,6 +137,7 @@ const newPasswordForm = ref({
 // Providing Variables
 provide("showNewPasswordDialog", showNewPasswordDialog);
 provide("showViewPasswordDialog", showViewPasswordDialog);
+provide("showNotification", showNotification);
 provide("passwords", passwords);
 provide("newPasswordForm", newPasswordForm);
 provide("selectedPassword", selectedPassword);

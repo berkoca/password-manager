@@ -3,6 +3,9 @@
 </template>
 
 <script setup>
+// Imports
 import { inject } from "vue";
+
+// Injects
 const passwords = inject("passwords");
 </script>
