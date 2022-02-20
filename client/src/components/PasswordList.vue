@@ -1,6 +1,6 @@
 <template>
   <v-theme-provider>
-    <v-table fixed-header height="600px" density="compact">
+    <v-table fixed-header height="600px" density="compact" no-data-text="There is no password in the table.">
       <thead style="z-index: 1">
         <tr>
           <th class="text-left" width="1%">#</th>
@@ -14,7 +14,7 @@
       <tbody>
         <tr v-for="(password, index) in passwords" :key="index">
           <td>
-            <span>{{ index + 1 }}</span>
+            <span>{{ password.id }}</span>
           </td>
           <td>
             <span>{{ password.application }}</span>
@@ -36,7 +36,7 @@
           </td>
           <td>
             <div class="table-button">
-              <i class="fas fa-trash"></i>
+              <i @click="deletePassword(password.id)" class="fas fa-trash"></i>
             </div>
           </td>
         </tr>
@@ -48,17 +48,40 @@
 <script setup>
 // Imports
 import { inject } from "vue";
+import axios from "axios";
 
 // Injects
 const passwords = inject("passwords");
 const showViewPasswordDialog = inject("showViewPasswordDialog");
 const selectedPassword = inject("selectedPassword");
+const showNotification = inject("showNotification");
+const notificationMessage = inject("notificationMessage");
 
 // Functions
 const showPassword = (password) => {
-    showViewPasswordDialog.value = true;
-    selectedPassword.value = password;
-}
+  showViewPasswordDialog.value = true;
+  selectedPassword.value = password;
+};
+const deletePassword = async (id) => {
+  try {
+    const response = await axios.delete("http://localhost:3000/passwords/" + id);
+    if (response) {
+      passwords.value = passwords.value.filter((x) => x.id != id);
+
+      if (response.data && response.data.message) {
+        showNotification.value = true;
+        notificationMessage.value = response.data.message;
+
+        setTimeout(() => {
+          showNotification.value = false;
+          notificationMessage.value = null;
+        }, 2000);
+      }
+    }
+  } catch (error) {
+    console.log("An error occured while trying to delete password (id: " + id + "): " + error.message);
+  }
+};
 </script>
 
 <style scoped>

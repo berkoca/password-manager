@@ -39,13 +39,17 @@ import { inject } from "vue";
 const showViewPasswordDialog = inject("showViewPasswordDialog");
 const selectedPassword = inject("selectedPassword");
 const showNotification = inject("showNotification");
+const notificationMessage = inject("notificationMessage");
 
 // Functions
 const updateClipboard = (newClip) => {
   navigator.clipboard.writeText(newClip).then(function() {
     showNotification.value = true;
+    notificationMessage.value = "Password copied to clipboard!";
+
     setTimeout(() => {
-        showNotification.value = false;
+      showNotification.value = false;
+      notificationMessage.value = null;
     }, 2000);
   }, function() { });
 }

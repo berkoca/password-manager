@@ -1,4 +1,9 @@
-class GeneratePassword {
+/**
+ * @author Berk Koca <berk1937@gmail.com>
+ * @class GeneratePassword
+ * @description Password generator class made by Berk Koca
+ */
+export class GeneratePassword {
     private password: string = "";
     private categories: string[][] = [];
 

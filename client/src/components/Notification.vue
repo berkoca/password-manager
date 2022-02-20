@@ -1,5 +1,5 @@
 <template>
-    <div v-show="showNotification" class="notification">Password copied to clipboard!</div>
+    <div v-show="showNotification" class="notification">{{ notificationMessage }}</div>
 </template>
 
 <script setup>
@@ -8,6 +8,7 @@ import { inject } from "vue";
 
 // Injects
 const showNotification = inject("showNotification");
+const notificationMessage = inject("notificationMessage");
 </script>
 
 <style scoped>
@@ -26,6 +27,7 @@ const showNotification = inject("showNotification");
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   animation: fade 2s;
   box-shadow: 0px 0px 20px 0px #000000;
 }

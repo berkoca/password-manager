@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import httpStatus from "http-status";
 import { Database } from "../database";
+import { GeneratePassword } from "../library/GeneratePassword";
 import { Password } from "../models/Password";
 
 export class PasswordsController {
@@ -30,7 +31,9 @@ export class PasswordsController {
     public async newPassword(req: Request, res: Response) {
         try {
             const passwordsRepository = Database.connection.getRepository(Password);
-            const password = passwordsRepository.create(req.body);
+            if (!req.body.password.useNumbers && !req.body.password.useSymbols && !req.body.password.useLowercaseLetters && !req.body.password.useUppercaseLetters) return res.status(httpStatus.BAD_REQUEST).json({ message: "You must send true value of one of useNumbers, useSymbols, useLowercaseLetters or useUppercaseLetters field in password object in request body object." });
+            const generatePassword = new GeneratePassword(req.body.password);
+            const password = passwordsRepository.create({ application: req.body.application, username: req.body.username, password: generatePassword.new() });
             await passwordsRepository.save(password);
             return res.status(httpStatus.OK).json({ data: password });
         } catch (error) {
