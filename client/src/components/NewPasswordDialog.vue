@@ -51,6 +51,7 @@ import { inject } from "vue";
 import axios from "axios";
 
 // Injects
+const notification = inject("notification");
 const showNewPasswordDialog = inject("showNewPasswordDialog");
 const newPasswordForm = inject("newPasswordForm");
 const passwords = inject("passwords");
@@ -72,9 +73,28 @@ const saveNewPassword = async () => {
     const response = await axios.post("http://localhost:3000/passwords", data);
     if (response && response.data && response.data.data) {
       passwords.value.push(response.data.data);
+
+      newPasswordForm.value = {
+        useSymbols: true,
+        useNumbers: true,
+        useLowercaseLetters: true,
+        useUppercaseLetters: true,
+        length: 16,
+        application: null,
+        username: null,
+      };
     }
   } catch (error) {
     console.log("An error occured while tring to save new password: " + error.message);
+
+    notification.value.show = true;
+    notification.value.message = error.response.data.message || error.message;
+    notification.value.isError = true;
+
+    setTimeout(() => {
+      notification.value.show = false;
+      notification.value.message = null;
+    }, 2000);
   }
   showNewPasswordDialog.value = false;
 };

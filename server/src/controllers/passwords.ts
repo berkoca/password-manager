@@ -67,7 +67,7 @@ export class PasswordsController {
             for (const field in req.body) {
                 copy[field] = req.body[field];
             }
-            return res.status(httpStatus.OK).json({ data: copy });
+            return res.status(httpStatus.OK).json({ data: copy, message: "Changes has been saved!" });
         } catch (error) {
             return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: (error as any).message });
         }

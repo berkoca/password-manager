@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { PasswordsController } from "../controllers/passwords";
-import { validator } from "../middlewares/validator";
+import validator from "../middlewares/validator";
 import { PasswordValidationSchema } from "../validations/Password";
 
 const router = Router();

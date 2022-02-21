@@ -1,5 +1,5 @@
 <template>
-    <div v-show="showNotification" class="notification">{{ notificationMessage }}</div>
+    <div v-show="notification.show" class="notification" :class="{ 'error': notification.isError }">{{ notification.message }}</div>
 </template>
 
 <script setup>
@@ -7,15 +7,14 @@
 import { inject } from "vue";
 
 // Injects
-const showNotification = inject("showNotification");
-const notificationMessage = inject("notificationMessage");
+const notification = inject("notification");
 </script>
 
 <style scoped>
 .notification {
   position: absolute;
   margin-bottom: 10px;
-  margin-right: 25px;
+  margin-right: 15px;
   bottom: 0;
   right: 0;
   height: 80px;
@@ -30,6 +29,11 @@ const notificationMessage = inject("notificationMessage");
   text-align: center;
   animation: fade 2s;
   box-shadow: 0px 0px 20px 0px #000000;
+  padding: 10px;
+}
+.error {
+  background-color: #ff1111;
+  color: white;
 }
 @keyframes fade {
   0% {opacity:0;}

@@ -1,6 +1,7 @@
 <template>
   <NewPasswordDialog />
   <ViewPasswordDialog />
+  <EditPasswordDialog />
   <Notification />
   <div class="parent">
     <h1 style="color: white" class="pb-2">Password Manager</h1>
@@ -24,6 +25,7 @@ import axios from "axios";
 // Components
 import NewPasswordDialog from "@/components/NewPasswordDialog";
 import ViewPasswordDialog from "@/components/ViewPasswordDialog";
+import EditPasswordDialog from "@/components/EditPasswordDialog";
 import PasswordList from "@/components/PasswordList";
 import PasswordCount from "@/components/PasswordCount";
 import Notification from "@/components/Notification";
@@ -33,14 +35,18 @@ const passwords = ref([]);
 const selectedPassword = ref(null);
 const showNewPasswordDialog = ref(false);
 const showViewPasswordDialog = ref(false);
-const showNotification = ref(false);
-const notificationMessage = ref(null);
+const showEditPasswordDialog = ref(false);
+const notification = ref({
+  show: false,
+  message: null,
+  isError: false
+});
 const newPasswordForm = ref({
   useSymbols: true,
   useNumbers: true,
   useLowercaseLetters: true,
   useUppercaseLetters: true,
-  length: 8,
+  length: 16,
   application: null,
   username: null,
 });
@@ -48,11 +54,11 @@ const newPasswordForm = ref({
 // Providing Variables
 provide("showNewPasswordDialog", showNewPasswordDialog);
 provide("showViewPasswordDialog", showViewPasswordDialog);
-provide("showNotification", showNotification);
+provide("showEditPasswordDialog", showEditPasswordDialog);
+provide("notification", notification);
 provide("passwords", passwords);
 provide("newPasswordForm", newPasswordForm);
 provide("selectedPassword", selectedPassword);
-provide("notificationMessage", notificationMessage);
 
 // Functions
 const getPasswords = async () => {
@@ -63,6 +69,15 @@ const getPasswords = async () => {
     }
   } catch (error) {
     console.log("An error occured while trying to get passwords from server: " + error.message);
+
+    notification.value.show = true;
+    notification.value.message = error.message;
+    notification.value.isError = true;
+
+    setTimeout(() => {
+      notification.value.show = false;
+      notification.value.message = null;
+    }, 2000);
   }
 };
 
