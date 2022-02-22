@@ -18,9 +18,9 @@
     Manage your passwords, generate new passwords randomly and store them.
     <br />
     <br />
-    <a href="https://github.com/berkoca/password-manager/issues">Report Bug</a>
+    <a href="https://github.com/berkoca/password-generator/issues">Report Bug</a>
     ·
-    <a href="https://github.com/berkoca/password-manager/issues">Request Feature</a>
+    <a href="https://github.com/berkoca/password-generator/issues">Request Feature</a>
   </p>
 </div>
 
@@ -53,8 +53,8 @@
 <!-- SCREENSHOTS -->
 ## Screenshots
 
-![Password list](https://raw.githubusercontent.com/berkoca/password-manager/master/screenshot_1.png)
-![Create a new password](https://raw.githubusercontent.com/berkoca/password-manager/master/screenshot_2.png)
+![Password list](https://raw.githubusercontent.com/berkoca/password-generator/master/screenshot_1.png)
+![Create a new password](https://raw.githubusercontent.com/berkoca/password-generator/master/screenshot_2.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -78,7 +78,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/berkoca/password-manager.git
+   git clone https://github.com/berkoca/password-generator.git
    ```
 2. Install Client NPM packages
    ```sh
@@ -132,7 +132,7 @@ To get a local copy up and running follow these simple example steps.
     - [ ] Logging
     - [ ] Creating env config
 
-See the [open issues](https://github.com/berkoca/password-manager/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/berkoca/password-generator/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -170,22 +170,22 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - berk1937@gmail.com
 
-Project Link: [https://github.com/berkoca/password-manager](https://github.com/berkoca/password-manager)
+Project Link: [https://github.com/berkoca/password-generator](https://github.com/berkoca/password-generator)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/berkoca/password-manager.svg?style=for-the-badge
-[contributors-url]: https://github.com/berkoca/password-manager/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/berkoca/password-manager.svg?style=for-the-badge
-[forks-url]: https://github.com/berkoca/password-manager/network/members
-[stars-shield]: https://img.shields.io/github/stars/berkoca/password-manager.svg?style=for-the-badge
-[stars-url]: https://github.com/berkoca/password-manager/stargazers
-[issues-shield]: https://img.shields.io/github/issues/berkoca/password-manager.svg?style=for-the-badge
-[issues-url]: https://github.com/berkoca/password-manager/issues
-[license-shield]: https://img.shields.io/github/license/berkoca/password-manager.svg?style=for-the-badge
-[license-url]: https://github.com/berkoca/password-manager/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/berkoca/password-generator.svg?style=for-the-badge
+[contributors-url]: https://github.com/berkoca/password-generator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/berkoca/password-generator.svg?style=for-the-badge
+[forks-url]: https://github.com/berkoca/password-generator/network/members
+[stars-shield]: https://img.shields.io/github/stars/berkoca/password-generator.svg?style=for-the-badge
+[stars-url]: https://github.com/berkoca/password-generator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/berkoca/password-generator.svg?style=for-the-badge
+[issues-url]: https://github.com/berkoca/password-generator/issues
+[license-shield]: https://img.shields.io/github/license/berkoca/password-generator.svg?style=for-the-badge
+[license-url]: https://github.com/berkoca/password-generator/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/berkoca
