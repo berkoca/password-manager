@@ -54,8 +54,8 @@
 <!-- SCREENSHOTS -->
 ## Screenshots
 
-![Password list](https://raw.githubusercontent.com/berkoca/password-generator/master/screenshot_1.png)
-![Create a new password](https://raw.githubusercontent.com/berkoca/password-generator/master/screenshot_2.png)
+![Password list](https://raw.githubusercontent.com/berkoca/password-manager/master/screenshot_1.png)
+![Create a new password](https://raw.githubusercontent.com/berkoca/password-manager/master/screenshot_2.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -190,4 +190,3 @@ Project Link: [https://github.com/berkoca/password-manager](https://github.com/b
 [license-url]: https://github.com/berkoca/password-manager/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/berkoca
-[product-screenshot]: screenshot_1.png
