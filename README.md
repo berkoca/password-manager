@@ -168,7 +168,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - berk1937@gmail.com
+Berk Koca - berk1937@gmail.com
 
 Project Link: [https://github.com/berkoca/password-manager](https://github.com/berkoca/password-manager)
 
