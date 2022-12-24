@@ -61,6 +61,7 @@
 ### Built With
 
 * [Vue.js 3 + Composition API](https://vuejs.org/)
+* [Pinia](https://pinia.vuejs.org/)
 * [Express.js](https://expressjs.com/)
 * [TypeScript](https://typescriptlang.org/)
 * [Joi](https://joi.dev/)
