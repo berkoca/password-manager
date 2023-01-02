@@ -1,17 +1,18 @@
 <template>
   <v-theme-provider theme="dark">
     <div class="text-center">
-      <v-dialog v-model="showEditPasswordDialog">
-        <v-card class="dialog">
-          <v-card-header>
-            <v-card-header-text> Editing a Password </v-card-header-text>
-          </v-card-header>
+      <v-dialog v-model="showEditPasswordDialog" style="width: 100vh;">
+        <v-card>
+          <v-card-title> Editing a Password </v-card-title>
           <v-card-text>
             <v-row style="width: 500px">
               <v-col cols="12">
-                <v-text-field class="form-input" density="compact" label="Application Name/URL" v-model="selectedPassword.application"></v-text-field>
-                <v-text-field class="form-input" density="compact" label="Username/E-mail" v-model="selectedPassword.username"></v-text-field>
-                <v-text-field class="form-input" density="compact" label="Password" v-model="selectedPassword.password"></v-text-field>
+                <v-text-field class="form-input" density="compact" label="Application Name/URL"
+                  v-model="selectedPassword.application"></v-text-field>
+                <v-text-field class="form-input" density="compact" label="Username/E-mail"
+                  v-model="selectedPassword.username"></v-text-field>
+                <v-text-field class="form-input" density="compact" label="Password"
+                  v-model="selectedPassword.password"></v-text-field>
               </v-col>
             </v-row>
           </v-card-text>
@@ -77,9 +78,6 @@ const savePassword = async () => {
 
 <style scoped>
 .form-input {
-  margin-bottom: -30px;
-}
-.dialog {
-  margin-top: -50px;
+  margin-bottom: -10px;
 }
 </style>

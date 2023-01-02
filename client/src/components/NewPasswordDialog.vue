@@ -1,31 +1,28 @@
 <template>
   <v-theme-provider theme="dark">
     <div class="text-center">
-      <v-dialog v-model="showNewPasswordDialog">
-        <v-card class="dialog">
-          <v-card-header>
-            <v-card-header-text> Adding a New Password </v-card-header-text>
-          </v-card-header>
+      <v-dialog v-model="showNewPasswordDialog" style="width: 100vh;">
+        <v-card>
+          <v-card-title>
+            Adding a New Password
+          </v-card-title>
           <v-card-text>
             <v-row style="width: 500px">
               <v-col cols="12">
-                <v-checkbox class="form-input" density="compact" label="Include Symbols (@#$%)" v-model="newPasswordForm.useSymbols"></v-checkbox>
-                <v-checkbox class="form-input" density="compact" label="Include Numbers (123456)" v-model="newPasswordForm.useNumbers"></v-checkbox>
-                <v-checkbox
-                  class="form-input"
-                  density="compact"
-                  label="Include Lowercase Characters (abcdefgh)"
-                  v-model="newPasswordForm.useLowercaseLetters"
-                ></v-checkbox>
-                <v-checkbox
-                  class="form-input"
-                  density="compact"
-                  label="Include Uppercase Characters (ABCDEFGH)"
-                  v-model="newPasswordForm.useUppercaseLetters"
-                ></v-checkbox>
-                <v-text-field class="form-input" density="compact" label="Password Length" v-model="newPasswordForm.length"></v-text-field>
-                <v-text-field class="form-input" density="compact" label="Application Name/URL" v-model="newPasswordForm.application"></v-text-field>
-                <v-text-field class="form-input" density="compact" label="Username/Email" v-model="newPasswordForm.username"></v-text-field>
+                <v-checkbox class="form-input" density="compact" label="Include Symbols (@#$%)"
+                  v-model="newPasswordForm.useSymbols"></v-checkbox>
+                <v-checkbox class="form-input" density="compact" label="Include Numbers (123456)"
+                  v-model="newPasswordForm.useNumbers"></v-checkbox>
+                <v-checkbox class="form-input" density="compact" label="Include Lowercase Characters (abcdefgh)"
+                  v-model="newPasswordForm.useLowercaseLetters"></v-checkbox>
+                <v-checkbox class="form-input" density="compact" label="Include Uppercase Characters (ABCDEFGH)"
+                  v-model="newPasswordForm.useUppercaseLetters"></v-checkbox>
+                <v-text-field class="form-input" density="compact" label="Password Length"
+                  v-model="newPasswordForm.length"></v-text-field>
+                <v-text-field class="form-input" density="compact" label="Application Name/URL"
+                  v-model="newPasswordForm.application"></v-text-field>
+                <v-text-field class="form-input" density="compact" label="Username/Email"
+                  v-model="newPasswordForm.username"></v-text-field>
               </v-col>
             </v-row>
           </v-card-text>
@@ -102,9 +99,6 @@ const saveNewPassword = async () => {
 
 <style scoped>
 .form-input {
-  margin-bottom: -30px;
-}
-.dialog {
-  margin-top: -50px;
+  margin-bottom: -10px;
 }
 </style>
