@@ -119,8 +119,8 @@ To get a local copy up and running follow these simple example steps.
         - [x] View password dialog
         - [x] Edit password dialog
         - [x] Notification
+    - [x] Vuex/Pinia
     - [ ] State management
-    - [ ] Vuex/Pinia
     - [ ] Login page
 - [x] Back-end
     - [x] Passwords CRUD
